@@ -46,7 +46,7 @@ export default function OrderTable() {
     return (
         <div style={{ textAlign: 'right' }}>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 600 }} aria-label="customized table">
+                <Table sx={{ minWidth: 400 }} aria-label="customized table">
                     <TableHead>
                         <TableRow>
                             <StyledTableCell sx={{ fontSize: '16px' }}>Product name </StyledTableCell>
