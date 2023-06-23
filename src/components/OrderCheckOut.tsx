@@ -7,7 +7,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import RowRadioButtonsGroup from '../components/RadioButtons';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: theme.palette.common.white,
@@ -30,25 +29,27 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 function createData(
     name: string,
+    cost: string,
 
 ) {
-    return { name, };
+    return { name, cost};
 }
 
 const rows = [
-    createData('Color : White/Cement Grey/Black/Fire Red '),
-    createData('Code : 136064-116'),
-    createData('Size : 38-45 us '),
+    // createData('Product name '),
+    createData('Second product','$30'),
+    createData('Promotion code','$0'),
+    createData('Total (USD)','$5'),
 ];
 
 export default function OrderTable() {
     return (
         <div style={{ textAlign: 'right' }}>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                <Table sx={{ minWidth: 600 }} aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <StyledTableCell sx={{ fontSize: '16px' }}>Specifications</StyledTableCell>
+                            <StyledTableCell sx={{ fontSize: '16px' }}>Product name </StyledTableCell>
 
                         </TableRow>
                     </TableHead>
@@ -58,11 +59,14 @@ export default function OrderTable() {
                                 <StyledTableCell component="th" scope="row">
                                     {row.name}
                                 </StyledTableCell>
+                                <StyledTableCell align="right">{row.cost}</StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
+
+
         </div>
 
     );

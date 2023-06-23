@@ -26,16 +26,21 @@ const CheckOut = () => {
     return (
         <Container maxWidth="xl" className='bodyTop'>
             <CssBaseline>
-                <Box sx={{ flexGrow: 10 }}>
-                    <Grid container spacing={10} columns={10}>
-                        <Grid item xs={8} md={20}>
+                <Box sx={{ flexGrow: 1 }}>
+                    <Grid spacing={20} columns={0}>
+                        <Grid item xs={0} md={0}>
+                            <div >
+
+                            </div>
                             <Typography style={{ textAlign: 'center', fontWeight: 'bold', paddingTop: '20px' }} gutterBottom variant="h5" component="div">
                                 Checkout form
                             </Typography>
-                        </Grid>
 
-                        <Grid style={{ display: 'flex', flexDirection: 'row', paddingLeft: '10%' }}>
-                            <Grid spacing={0} item xs={0} md={50}>
+
+                        </Grid>
+                        <br />
+                        <Grid style={{ display: 'flex', flexDirection: 'row', paddingTop: '5%' }}>
+                            <Grid spacing={0} item xs={0} md={20}>
                                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', textAlign: 'left' }}>
                                     <Typography style={{ textAlign: 'left', fontWeight: 'bold' }} gutterBottom variant="h5" component="div">
                                         Billing address
@@ -45,7 +50,7 @@ const CheckOut = () => {
                                 </div>
 
 
-                                <Grid item xs={0} md={30}>
+                                <Grid spacing={10} item xs={0} md={25}>
 
                                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', textAlign: 'left' }}>
                                         <div >
@@ -68,57 +73,63 @@ const CheckOut = () => {
                                         </div>
 
                                     </div>
-
+                                    <div style={{ textAlign: 'left', paddingTop: '5%' }}>
+                                        <TextField
+                                            required
+                                            id="outlined-required"
+                                            label="Username"
+                                            size='small'
+                                            style={{ width: '115%' }}
+                                            InputProps={{
+                                                startAdornment: <InputAdornment position="start">@</InputAdornment>,
+                                            }}
+                                        />
+                                    </div>
+                                    <div style={{textAlign: 'left', paddingTop: '5%' }}>
+                                        <TextField
+                                            required
+                                            id="outlined-required"
+                                            label="Email"
+                                            size='small'
+                                            style={{ width: '115%' }}
+                                        />
+                                    </div>
+                                    <div style={{ textAlign: 'left', paddingTop: '5%' }}>
+                                        <TextField
+                                            required
+                                            id="outlined-required"
+                                            label="Address"
+                                            size='small'
+                                            style={{ width: '115%' }}
+                                        />
+                                    </div>
+                                    <div style={{  textAlign: 'left', paddingTop: '5%' }}>
+                                        <TextField
+                                            // required
+                                            id="outlined-required"
+                                            label="Address 2"
+                                            size='small'
+                                            style={{ width: '115%' }}
+                                        />
+                                    </div>
                                 </Grid>
 
 
-                                <div style={{ display: 'flex', justifyContent: 'flex-start', textAlign: 'left', paddingTop: '2%' }}>
-                                    <TextField
-                                        required
-                                        id="outlined-required"
-                                        label="Username"
-                                        size='small'
-                                        style={{ width: '100%' }}
-                                        InputProps={{
-                                            startAdornment: <InputAdornment position="start">@</InputAdornment>,
-                                        }}
-                                    />
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'flex-start', textAlign: 'left', paddingTop: '2%' }}>
-                                    <TextField
-                                        required
-                                        id="outlined-required"
-                                        label="Email"
-                                        size='small'
-                                        style={{ width: '50%' }}
-                                    />
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'flex-start', textAlign: 'left', paddingTop: '2%' }}>
-                                    <TextField
-                                        required
-                                        id="outlined-required"
-                                        label="Address"
-                                        size='small'
-                                        style={{ width: '50%' }}
-                                    />
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'flex-start', textAlign: 'left', paddingTop: '2%' }}>
-                                    <TextField
-                                        // required
-                                        id="outlined-required"
-                                        label="Address 2"
-                                        size='small'
-                                        style={{ width: '50%' }}
-                                    />
-                                </div>
+
+
 
                             </Grid>
-                            <Grid item xs={8} md={0}>
-                                <div >
+                            <Grid item xs={20} md={20}>
+                                <div style={{ paddingLeft: '50%' }}>
+                                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', textAlign: 'left' }}>
+                                        <Typography style={{ textAlign: 'left', fontWeight: 'bold' }} gutterBottom variant="h5" component="div">
+                                            Your cart
+                                        </Typography>
 
-                                    <Typography style={{ fontWeight: 'bold' }} gutterBottom variant="h5" component="div">
-                                        Your cart
-                                    </Typography>
+                                    </div>
+                                    <div style={{}}>
+                                        <OrderTable />
+                                    </div>
                                 </div>
                             </Grid>
                         </Grid>
